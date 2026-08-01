@@ -5,7 +5,7 @@ document.getElementById('check-btn').addEventListener('click', function () {
 
   // Get selected role
   const selectedRole = document.getElementById('role-select').value;
-
+  alert('Script file loaded!');
   const resultOutput = document.getElementById('result-output');
 
   // Validation
