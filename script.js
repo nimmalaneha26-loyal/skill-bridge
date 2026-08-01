@@ -39,7 +39,7 @@ document.getElementById('check-btn').addEventListener('click', function () {
   let output = `<h3>Target: ${selectedRole}</h3>`;
   output += `<p><strong>You're ${readinessPercent}% ready for this role.</strong></p>`;
   output += `<p><strong>Fresher-friendly:</strong> ${roleData.fresherFriendly ? '✅ Yes' : '⚠️ Usually needs experience'}</p>`;
-  output += `<p class="experience-note">${roleData.experienceNote}</p>`;
+output += `<p class="experience-note">${roleData.experienceNote}</p>`;
   const readinessPercent = Math.round((haveSkills.length / requiredSkills.length) * 100);
 
 // Build the output HTML
