@@ -1,5 +1,4 @@
 document.getElementById('check-btn').addEventListener('click', function () {
-  alert('Button clicked!');
   // Get all checked skills
   const checkboxes = document.querySelectorAll('#skills-checklist input[type="checkbox"]:checked');
   const userSkills = Array.from(checkboxes).map(cb => cb.value);
