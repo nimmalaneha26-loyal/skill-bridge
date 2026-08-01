@@ -38,20 +38,6 @@ document.getElementById('check-btn').addEventListener('click', function () {
   // Build the output HTML
   let output = `<h3>Target: ${selectedRole}</h3>`;
   output += `<p><strong>You're ${readinessPercent}% ready for this role.</strong></p>`;
-  output += `<p><strong>Fresher-friendly:</strong> ${roleData.fresherFriendly ? '✅ Yes' : '⚠️ Usually needs experience'}</p>`;
-output += `<p class="experience-note">${roleData.experienceNote}</p>`;
-  const readinessPercent = Math.round((haveSkills.length / requiredSkills.length) * 100);
-
-// Build the output HTML
-let output = `<h3>Target: ${selectedRole}</h3>`;
-output += `<p><strong>You're ${readinessPercent}% ready for this role.</strong></p>`;
-
-// ADD THE NEW LINES RIGHT HERE:
-output += `<p><strong>Fresher-friendly:</strong> ${roleData.fresherFriendly ? '✅ Yes' : '⚠️ Usually needs experience'}</p>`;
-output += `<p class="experience-note">${roleData.experienceNote}</p>`;
-
-output += `<p class="result-good">✅ Skills you have:</p>`;
-// ... rest of your code continues exactly as before
 
   output += `<p class="result-good">✅ Skills you have:</p>`;
   if (haveSkills.length > 0) {
