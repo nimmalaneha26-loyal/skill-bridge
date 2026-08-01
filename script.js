@@ -1,4 +1,3 @@
-alert('Script file loaded!');
 document.getElementById('check-btn').addEventListener('click', function () {
   // Get all checked skills
   const checkboxes = document.querySelectorAll('#skills-checklist input[type="checkbox"]:checked');
