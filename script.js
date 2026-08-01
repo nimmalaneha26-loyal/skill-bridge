@@ -1,13 +1,12 @@
 document.getElementById('check-btn').addEventListener('click', function () {
-  // Get all checked skills
   const checkboxes = document.querySelectorAll('#skills-checklist input[type="checkbox"]:checked');
-  const userSkills = Array.from(checkboxes).map(cb => cb.value);
+  const userSkills = Array.from(checkboxes).map(function (cb) {
+    return cb.value;
+  });
 
-  // Get selected role
   const selectedRole = document.getElementById('role-select').value;
   const resultOutput = document.getElementById('result-output');
 
-  // Validation
   if (!selectedRole) {
     resultOutput.innerHTML = '<p class="result-missing">Please select a target role first.</p>';
     return;
@@ -18,8 +17,9 @@ document.getElementById('check-btn').addEventListener('click', function () {
     return;
   }
 
-  // Find the role data
-  const roleData = rolesData.find(role => role.title === selectedRole);
+  const roleData = rolesData.find(function (role) {
+    return role.title === selectedRole;
+  });
 
   if (!roleData) {
     resultOutput.innerHTML = '<p class="result-missing">Role data not found.</p>';
@@ -28,38 +28,54 @@ document.getElementById('check-btn').addEventListener('click', function () {
 
   const requiredSkills = roleData.requiredSkills;
 
-  // Compare skills
-  const haveSkills = requiredSkills.filter(skill => userSkills.includes(skill));
-  const missingSkills = requiredSkills.filter(skill => !userSkills.includes(skill));
+  const haveSkills = requiredSkills.filter(function (skill) {
+    return userSkills.indexOf(skill) !== -1;
+  });
+
+  const missingSkills = requiredSkills.filter(function (skill) {
+    return userSkills.indexOf(skill) === -1;
+  });
 
   const readinessPercent = Math.round((haveSkills.length / requiredSkills.length) * 100);
 
-  // Build the output HTML
-  let output = `<h3>Target: ${selectedRole}</h3>`;
-  output += `<p><strong>You're ${readinessPercent}% ready for this role.</strong></p>`;
+  let output = '<h3>Target: ' + selectedRole + '</h3>';
+  output += '<p><strong>You are ' + readinessPercent + '% ready for this role.</strong></p>';
 
-  output += `<p class="result-good">✅ Skills you have:</p>`;
+  const friendlyText = roleData.fresherFriendly ? 'Yes' : 'Usually needs experience';
+  output += '<p><strong>Fresher-friendly:</strong> ' + friendlyText + '</p>';
+  output += '<p class="experience-note">' + roleData.experienceNote + '</p>';
+
+  output += '<p class="result-good">Skills you have:</p>';
   if (haveSkills.length > 0) {
-    output += `<ul>${haveSkills.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
+    output += '<ul>';
+    for (let i = 0; i < haveSkills.length; i++) {
+      output += '<li>' + haveSkills[i] + '</li>';
+    }
+    output += '</ul>';
   } else {
-    output += `<p>None yet — but every expert started here.</p>`;
+    output += '<p>None yet, but every expert started here.</p>';
   }
 
-  output += `<p class="result-missing">⚠️ Skills you're missing:</p>`;
+  output += '<p class="result-missing">Skills you are missing:</p>';
   if (missingSkills.length > 0) {
-    output += `<ul>${missingSkills.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
+    output += '<ul>';
+    for (let i = 0; i < missingSkills.length; i++) {
+      output += '<li>' + missingSkills[i] + '</li>';
+    }
+    output += '</ul>';
 
-    output += `<h3>🎯 Suggested Projects to Close the Gap</h3>`;
-    missingSkills.forEach(skill => {
+    output += '<h3>Suggested Projects to Close the Gap</h3>';
+    for (let i = 0; i < missingSkills.length; i++) {
+      const skill = missingSkills[i];
       const suggestion = skillProjectMap[skill];
       if (suggestion) {
-        output += `<div class="project-suggestion"><strong>${skill}:</strong> ${suggestion}</div>`;
+        output += '<div class="project-suggestion"><strong>' + skill + ':</strong> ' + suggestion + '</div>';
       }
-    });
+    }
   } else {
-    output += `<p>🎉 You already know every required skill for this role!</p>`;
+    output += '<p>You already know every required skill for this role!</p>';
   }
 
   resultOutput.innerHTML = output;
-
+});
                                                       
