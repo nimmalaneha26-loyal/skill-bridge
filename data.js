@@ -1,35 +1,30 @@
-const rolesData = [
-  {
     title: "Frontend Developer",
     requiredSkills: ["HTML", "CSS", "JavaScript", "React", "Git", "Responsive Design"],
+    fresherFriendly: true,
+    experienceNote: "Many companies hire freshers for this role, especially in startups and service-based companies. Strong portfolio projects matter more than experience here.",
   },
   {
     title: "Backend Developer",
     requiredSkills: ["JavaScript", "Node.js", "Express", "SQL", "REST APIs", "Git"],
+    fresherFriendly: true,
+    experienceNote: "Fresher-friendly, but companies often prefer at least one solid backend project (with a real database) in your portfolio.",
   },
   {
     title: "Full-Stack Developer",
     requiredSkills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "SQL", "Git", "REST APIs"],
+    fresherFriendly: false,
+    experienceNote: "Often expects 1-2 years experience since it demands both frontend and backend maturity. Rare but possible for freshers with strong end-to-end projects.",
   },
   {
     title: "Mobile App Developer",
     requiredSkills: ["Dart", "Flutter", "Git", "REST APIs", "UI Design"],
+    fresherFriendly: true,
+    experienceNote: "Growing demand for fresher Flutter developers, especially in product startups. Fewer candidates know Flutter well, which works in your favor.",
   },
   {
     title: "Python Developer",
     requiredSkills: ["Python", "OOP Concepts", "SQL", "Git", "Basic DSA"],
+    fresherFriendly: true,
+    experienceNote: "Fresher-friendly for automation/scripting roles; data-heavy Python roles (ML/Data Science) usually expect more experience or specialized coursework.",
   },
 ];
-
-const skillProjectMap = {
-  HTML: "Build a static personal profile page",
-  CSS: "Style a landing page using Flexbox/Grid",
-  JavaScript: "Build a calculator or to-do list app",
-  React: "Rebuild your portfolio site as a React app",
-  Git: "Push a project with proper commit history to GitHub",
-  "Node.js": "Build a simple REST API for a to-do list",
-  SQL: "Design a database schema for a student management system",
-  Python: "Build a simple CLI-based quiz app",
-  Flutter: "Build a weather app with Flutter",
-  "REST APIs": "Consume a public API and display data (weather, quotes, etc.)",
-};
