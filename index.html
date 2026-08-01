@@ -1,67 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skill Bridge | Find Your Skill Gap</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Bridge | Find Your Skill Gap</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background-color: #f0f4f8; color: #1e293b; line-height: 1.6; }
+header { background-color: #0f172a; color: #fff; padding: 40px 20px; text-align: center; }
+header h1 { font-size: 2.3rem; margin-bottom: 8px; }
+header p { color: #94a3b8; }
+main { max-width: 700px; margin: 0 auto; padding: 20px; }
+section { background-color: #fff; border-radius: 10px; padding: 25px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+section h2 { color: #0f172a; margin-bottom: 15px; }
+#skills-checklist { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+#skills-checklist label { background-color: #e2e8f0; padding: 8px 14px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+select { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 1rem; margin-bottom: 20px; }
+button { background-color: #2563eb; color: #fff; border: none; padding: 12px 24px; border-radius: 6px; font-size: 1rem; cursor: pointer; width: 100%; }
+.result-good { color: #16a34a; font-weight: 600; }
+.result-missing { color: #dc2626; font-weight: 600; }
+.project-suggestion { background-color: #eff6ff; border-left: 4px solid #2563eb; padding: 10px 15px; margin: 8px 0; border-radius: 4px; }
+footer { text-align: center; padding: 20px; color: #64748b; }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Skill Bridge</h1>
-    <p>Know your gap. Learn the right skill. Land the job.</p>
-  </header>
+<header>
+<h1>Skill Bridge</h1>
+<p>Know your gap. Learn the right skill. Land the job.</p>
+</header>
 
-  <main>
-    <section id="input-section">
-      <h2>Step 1: Select Skills You Know</h2>
-      <div id="skills-checklist">
-        <label><input type="checkbox" value="HTML"> HTML</label>
-        <label><input type="checkbox" value="CSS"> CSS</label>
-        <label><input type="checkbox" value="JavaScript"> JavaScript</label>
-        <label><input type="checkbox" value="React"> React</label>
-        <label><input type="checkbox" value="Git"> Git</label>
-        <label><input type="checkbox" value="Responsive Design"> Responsive Design</label>
-        <label><input type="checkbox" value="Node.js"> Node.js</label>
-        <label><input type="checkbox" value="Express"> Express</label>
-        <label><input type="checkbox" value="SQL"> SQL</label>
-        <label><input type="checkbox" value="REST APIs"> REST APIs</label>
-        <label><input type="checkbox" value="Dart"> Dart</label>
-        <label><input type="checkbox" value="Flutter"> Flutter</label>
-        <label><input type="checkbox" value="UI Design"> UI Design</label>
-        <label><input type="checkbox" value="Python"> Python</label>
-        <label><input type="checkbox" value="OOP Concepts"> OOP Concepts</label>
-        <label><input type="checkbox" value="Basic DSA"> Basic DSA</label>
-      </div>
+<main>
+<section>
+<h2>Step 1: Select Skills You Know</h2>
+<div id="skills-checklist">
+<label><input type="checkbox" value="HTML"> HTML</label>
+<label><input type="checkbox" value="CSS"> CSS</label>
+<label><input type="checkbox" value="JavaScript"> JavaScript</label>
+<label><input type="checkbox" value="React"> React</label>
+<label><input type="checkbox" value="Git"> Git</label>
+<label><input type="checkbox" value="Responsive Design"> Responsive Design</label>
+<label><input type="checkbox" value="Node.js"> Node.js</label>
+<label><input type="checkbox" value="Express"> Express</label>
+<label><input type="checkbox" value="SQL"> SQL</label>
+<label><input type="checkbox" value="REST APIs"> REST APIs</label>
+<label><input type="checkbox" value="Dart"> Dart</label>
+<label><input type="checkbox" value="Flutter"> Flutter</label>
+<label><input type="checkbox" value="UI Design"> UI Design</label>
+<label><input type="checkbox" value="Python"> Python</label>
+<label><input type="checkbox" value="OOP Concepts"> OOP Concepts</label>
+<label><input type="checkbox" value="Basic DSA"> Basic DSA</label>
+</div>
 
-      <h2>Step 2: Choose Your Target Role</h2>
-      <select id="role-select">
-        <option value="">-- Select a role --</option>
-        <option value="Frontend Developer">Frontend Developer</option>
-        <option value="Backend Developer">Backend Developer</option>
-        <option value="Full-Stack Developer">Full-Stack Developer</option>
-        <option value="Mobile App Developer">Mobile App Developer</option>
-        <option value="Python Developer">Python Developer</option>
-      </select>
+<h2>Step 2: Choose Your Target Role</h2>
+<select id="role-select">
+<option value="">-- Select a role --</option>
+<option value="Frontend Developer">Frontend Developer</option>
+<option value="Backend Developer">Backend Developer</option>
+<option value="Full-Stack Developer">Full-Stack Developer</option>
+<option value="Mobile App Developer">Mobile App Developer</option>
+<option value="Python Developer">Python Developer</option>
+</select>
 
-      <button id="check-btn">Check My Gap</button>
-    </section>
+<button id="check-btn">Check My Gap</button>
+</section>
 
-    <section id="result-section">
-      <h2>Your Result</h2>
-      <div id="result-output">
-        <p>Your results will appear here once you select skills and a role.</p>
-      </div>
-    </section>
-  </main>
+<section>
+<h2>Your Result</h2>
+<div id="result-output"><p>Your results will appear here once you select skills and a role.</p></div>
+</section>
+</main>
 
-  <footer>
-    <p>&copy; 2026 Skill Bridge — Built by Nimmala Neha</p>
-  </footer>
+<footer><p>Skill Bridge - Built by Nimmala Neha</p></footer>
 
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+<script>
+var rolesData = [
+{ title: "Frontend Developer", requiredSkills: ["HTML","CSS","JavaScript","React","Git","Responsive Design"], fresherFriendly: true, experienceNote: "Many companies hire freshers for this role, especially in startups and service-based companies." },
+{ title: "Backend Developer", requiredSkills: ["JavaScript","Node.js","Express","SQL","REST APIs","Git"], fresherFriendly: true, experienceNote: "Fresher-friendly, but companies often prefer at least one solid backend project." },
+{ title: "Full-Stack Developer", requiredSkills: ["HTML","CSS","JavaScript","React","Node.js","SQL","Git","REST APIs"], fresherFriendly: false, experienceNote: "Often expects 1-2 years experience since it demands both frontend and backend maturity." },
+{ title: "Mobile App Developer", requiredSkills: ["Dart","Flutter","Git","REST APIs","UI Design"], fresherFriendly: true, experienceNote: "Growing demand for fresher Flutter developers, especially in product startups." },
+{ title: "Python Developer", requiredSkills: ["Python","OOP Concepts","SQL","Git","Basic DSA"], fresherFriendly: true, experienceNote: "Fresher-friendly for automation and scripting roles." }
+];
+
+var skillProjectMap = {
+"HTML": "Build a static personal profile page",
+"CSS": "Style a landing page using Flexbox and Grid",
+"JavaScript": "Build a calculator or to-do list app",
+"React": "Rebuild your portfolio site as a React app",
+"Git": "Push a project with proper commit history to GitHub",
+"Node.js": "Build a simple REST API for a to-do list",
+"SQL": "Design a database schema for a student management system",
+"Python": "Build a simple CLI-based quiz app",
+"Flutter": "Build a weather app with Flutter",
+"REST APIs": "Consume a public API and display data"
+};
+
+document.getElementById("check-btn").addEventListener("click", function() {
+var checkboxes = document.querySelectorAll("#skills-checklist input[type=checkbox]:checked");
+var userSkills = [];
+for (var i = 0; i < checkboxes.length; i++) {
+userSkills.push(checkboxes[i].value);
+}
+
+var selectedRole = document.getElementById("role-select").value;
+var resultOutput = document.getElementById("result-output");
+
+if (selectedRole === "") {
+resultOutput.innerHTML = "<p class='result-missing'>Please select a target role first.</p>";
+return;
+}
+
+if (userSkills.length === 0) {
+resultOutput.innerHTML = "<p class='result-missing'>Please select at least one skill you know.</p>";
+return;
+}
+
+var roleData = null;
+for (var i = 0; i < rolesData.length; i++) {
+if (rolesData[i].title === selectedRole) {
+roleData = rolesData[i];
+break;
+}
+}
+
+if (roleData === null) {
+resultOutput.innerHTML = "<p class='result-missing'>Role data not found.</p>";
+return;
+}
+
+var requiredSkills = roleData.requiredSkills;
+var haveSkills = [];
+var missingSkills = [];
+
+for (var i = 0; i < requiredSkills.length; i++) {
+var skill = requiredSkills[i];
+var found = false;
+for (var j = 0; j < userSkills.length; j++) {
+if (userSkills[j] === skill) {
+found = true;
+break;
+}
+}
+if (found) {
+haveSkills.push(skill);
+} else {
+missingSkills.push(skill);
+}
+}
+
+var readinessPercent = Math.round((haveSkills.length / requiredSkills.length) * 100);
+
+var output = "<h3>Target: " + selectedRole + "</h3>";
+output += "<p><strong>You are " + readinessPercent + "% ready for this role.</strong></p>";
+
+var friendlyText = roleData.fresherFriendly ? "Yes" : "Usually needs experience";
+output += "<p><strong>Fresher-friendly:</strong> " + friendlyText + "</p>";
+output += "<p>" + roleData.experienceNote + "</p>";
+
+output += "<p class='result-good'>Skills you have:</p>";
+if (haveSkills.length > 0) {
+output += "<ul>";
+for (var i = 0; i < haveSkills.length; i++) {
+output += "<li>" + haveSkills[i] + "</li>";
+}
+output += "</ul>";
+} else {
+output += "<p>None yet, but every expert started here.</p>";
+}
+
+output += "<p class='result-missing'>Skills you are missing:</p>";
+if (missingSkills.length > 0) {
+output += "<ul>";
+for (var i = 0; i < missingSkills.length; i++) {
+output += "<li>" + missingSkills[i] + "</li>";
+}
+output += "</ul>";
+
+output += "<h3>Suggested Projects to Close the Gap</h3>";
+for (var i = 0; i < missingSkills.length; i++) {
+var s = missingSkills[i];
+if (skillProjectMap[s]) {
+output += "<div class='project-suggestion'><strong>" + s + ":</strong> " + skillProjectMap[s] + "</div>";
+}
+}
+} else {
+output += "<p>You already know every required skill for this role!</p>";
+}
+
+resultOutput.innerHTML = output;
+});
+</script>
 
 </body>
 </html>
