@@ -1,3 +1,4 @@
+alert('Script file loaded!');
 document.getElementById('check-btn').addEventListener('click', function () {
   // Get all checked skills
   const checkboxes = document.querySelectorAll('#skills-checklist input[type="checkbox"]:checked');
@@ -5,7 +6,6 @@ document.getElementById('check-btn').addEventListener('click', function () {
 
   // Get selected role
   const selectedRole = document.getElementById('role-select').value;
-  alert('Script file loaded!');
   const resultOutput = document.getElementById('result-output');
 
   // Validation
