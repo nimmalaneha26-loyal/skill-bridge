@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background-color: #f0f4f8; color: #1e293b; line-height: 1.6; }
+header { background-color: #0f172a; color: #fff; padding: 40px 20px; text-align: center; }
+header h1 { font-size: 2.3rem; margin-bottom: 8px; }
+header p { color: #94a3b8; }
+main { max-width: 700px; margin: 0 auto; padding: 20px; }
+section { background-color: #fff; border-radius: 10px; padding: 25px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+section h2 { color: #0f172a; margin-bottom: 15px; }
+#skills-checklist { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+#skills-checklist label { background-color: #e2e8f0; padding: 8px 14px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+select { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 1rem; margin-bottom: 20px; }
+button { background-color: #2563eb; color: #fff; border: none; padding: 12px 24px; border-radius: 6px; font-size: 1rem; cursor: pointer; width: 100%; }
+.result-good { color: #16a34a; font-weight: 600; }
+.result-missing { color: #dc2626; font-weight: 600; }
+.project-suggestion { background-color: #eff6ff; border-left: 4px solid #2563eb; padding: 10px 15px; margin: 8px 0; border-radius: 4px; }
+footer { text-align: center; padding: 20px; color: #64748b; }
