@@ -4,6 +4,7 @@ var rolesData = [
 { title: "Full-Stack Developer", requiredSkills: ["HTML","CSS","JavaScript","React","Node.js","SQL","Git","REST APIs"], fresherFriendly: false, experienceNote: "Often expects 1-2 years experience since it demands both frontend and backend maturity." },
 { title: "Mobile App Developer", requiredSkills: ["Dart","Flutter","Git","REST APIs","UI Design"], fresherFriendly: true, experienceNote: "Growing demand for fresher Flutter developers, especially in product startups." },
 { title: "Python Developer", requiredSkills: ["Python","OOP Concepts","SQL","Git","Basic DSA"], fresherFriendly: true, experienceNote: "Fresher-friendly for automation and scripting roles." }
+  title: "QA Tester", requiredSkils: ["HTML","Basic DSA","SQL","Git"], fresherFriendly:true, experienceNote:"
 ];
 
 var skillProjectMap = {
