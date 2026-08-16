@@ -17,5 +17,6 @@ var skillProjectMap = {
 "SQL": "Design a database schema for a student management system",
 "Python": "Build a simple CLI-based quiz app",
 "Flutter": "Build a weather app with Flutter",
-"REST APIs": "Consume a public API and display data"
+"REST APIs": "Consume a public API and display data",
+"MongoDB": "Build a small app that stores and retrieves data using MongoDB"
 };
