@@ -14,3 +14,6 @@ button { background-color: #2563eb; color: #fff; border: none; padding: 12px 24p
 .result-missing { color: #dc2626; font-weight: 600; }
 .project-suggestion { background-color: #eff6ff; border-left: 4px solid #2563eb; padding: 10px 15px; margin: 8px 0; border-radius: 4px; }
 footer { text-align: center; padding: 20px; color: #64748b; }
+.explain-block { background-color: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 12px; }
+.rate-btn { width: auto; display: inline-block; margin-right: 10px; margin-top: 8px; background-color: #e2e8f0; color: #1e293b; padding: 8px 14px; font-size: 0.9rem; }
+.rate-btn.selected { background-color: #2563eb; color: #fff; }
