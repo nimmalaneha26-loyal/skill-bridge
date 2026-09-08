@@ -1,34 +1,197 @@
-.step { display: none; }
-.step.active { display: block; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-#step-indicator {
-  font-family: 'Space Grotesk', Arial, sans-serif;
-  font-size: 0.85rem;
-  color: #5B6472;
-  letter-spacing: 0.5px;
-  margin-bottom: 24px;
-}
-
-.next-btn, .back-btn {
-  width: auto;
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  font-family: 'Space Grotesk', Arial, sans-serif;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.next-btn {
-  background-color: #10192E;
-  color: #FFFFFF;
-  border: none;
-}
-
-.back-btn {
+body {
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
   background-color: #FFFFFF;
   color: #10192E;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+}
+
+header {
+  background-color: #10192E;
+  color: #FFFFFF;
+  padding: 60px 24px 40px;
+  text-align: left;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+}
+
+header p {
+  color: #C9CEDB;
+  font-size: 1.05rem;
+  max-width: 480px;
+}
+
+.beam {
+  height: 4px;
+  max-width: 760px;
+  margin: 0 auto;
+  background: linear-gradient(to right, #E8A33D 0%, #E8A33D 30%, #1F8A70 30%, #1F8A70 60%, #C1440E 60%, #C1440E 100%);
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 24px 60px;
+}
+
+section {
+  padding: 36px 0;
+  border-bottom: 1px solid #D8DEE2;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #10192E;
+  margin-bottom: 18px;
+}
+
+section > p {
+  color: #5B6472;
+  margin-bottom: 16px;
+  max-width: 560px;
+}
+
+#skills-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#skills-checklist label {
   border: 1px solid #D8DEE2;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  transition: border-color 0.15s;
+}
+
+#skills-checklist label:has(input:checked) {
+  border-color: #10192E;
+  background-color: #F1F4F3;
+  font-weight: 500;
+}
+
+.explain-block {
+  border-left: 3px solid #D8DEE2;
+  padding: 14px 0 14px 18px;
+  margin-bottom: 14px;
+}
+
+.rate-btn {
+  width: auto;
+  display: inline-block;
   margin-right: 10px;
+  margin-top: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid #D8DEE2;
+  color: #10192E;
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+.rate-btn.selected {
+  background-color: #10192E;
+  color: #FFFFFF;
+  border-color: #10192E;
+}
+
+.explain-textbox {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #D8DEE2;
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 4px;
+  border: 1px solid #D8DEE2;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  background-color: #FFFFFF;
+}
+
+button#check-btn {
+  background-color: #E8A33D;
+  color: #10192E;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+}
+
+button#check-btn:hover {
+  background-color: #D3922F;
+}
+
+#result-output h3 {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #10192E;
+}
+
+#result-output ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#result-output li {
+  padding: 6px 0 6px 20px;
+  position: relative;
+  color: #10192E;
+}
+
+.result-good { color: #1F8A70; font-weight: 600; }
+.result-missing { color: #C1440E; font-weight: 600; }
+
+.project-suggestion {
+  background-color: #F1F4F3;
+  border-left: 3px solid #E8A33D;
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 4px;
+  font-size: 0.94rem;
+}
+
+footer {
+  text-align: left;
+  padding: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+  color: #5B6472;
+  font-size: 0.88rem;
 }
