@@ -14,10 +14,13 @@
 <h1>Skill Bridge</h1>
 <p>Know your gap. Learn the right skill. Land the job.</p>
 </header>
+<div class="beam"></div>
 
 <main>
-<section>
-<h2>01 - Select Skills You Know</h2>
+<p id="step-indicator">Step 1 of 4</p>
+
+<section class="step active" id="step-1">
+<h2>01 — Select the skills you know</h2>
 <div id="skills-checklist">
 <label><input type="checkbox" value="HTML"> HTML</label>
 <label><input type="checkbox" value="CSS"> CSS</label>
@@ -36,12 +39,19 @@
 <label><input type="checkbox" value="OOP Concepts"> OOP Concepts</label>
 <label><input type="checkbox" value="Basic DSA"> Basic DSA</label>
 </div>
+<button class="next-btn" data-next="2">Next →</button>
+</section>
 
-<h2>02 - Honesty Check - Can You Explain These?</h2>
+<section class="step" id="step-2">
+<h2>02 — Honesty check: can you explain these?</h2>
 <p>For each skill below, be honest with yourself. This helps catch gaps before an interviewer does.</p>
 <div id="explain-section"></div>
+<button class="back-btn" data-back="1">← Back</button>
+<button class="next-btn" data-next="3">Next →</button>
+</section>
 
-<h2>03 - Choose Your Target Role</h2>
+<section class="step" id="step-3">
+<h2>03 — Choose your target role</h2>
 <select id="role-select">
 <option value="">-- Select a role --</option>
 <option value="Frontend Developer">Frontend Developer</option>
@@ -51,13 +61,14 @@
 <option value="Python Developer">Python Developer</option>
 <option value="QA Tester">QA Tester</option>
 </select>
-
+<button class="back-btn" data-back="2">← Back</button>
 <button id="check-btn">Check My Gap</button>
 </section>
 
-<section>
-<h2>Your Result</h2>
+<section class="step" id="step-4">
+<h2>Your gap, mapped</h2>
 <div id="result-output"><p>Your results will appear here once you select skills and a role.</p></div>
+<button class="back-btn" data-back="3">← Start Over</button>
 </section>
 </main>
 
